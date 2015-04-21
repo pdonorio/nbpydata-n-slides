@@ -1,4 +1,4 @@
-# nbpydata-n-slides
+G# nbpydata-n-slides
 
 This is a docker image:
 
@@ -73,6 +73,6 @@ At this point you may access the example at the web address
 
 You should see something like this snapshot:
 
-![notebook with slides](https://www.dropbox.com/s/g4d3b7v9mok5mh8/Screenshot%202015-04-21%2012.34.04.png?dl=0 "test")
+![notebook with slides](/../screenshots/screens/screen.png?raw=true "Notebook with slideshow")
 
 Press the histogram button on the side of "Cell toolbar", and enjoy!
