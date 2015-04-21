@@ -11,7 +11,7 @@ To work with it you need to have [docker](https://docs.docker.com/installation/)
 ## Simple launch
 
 ```
-# Launch jupyter server 
+# Launch jupyter server
 docker run -t --name ipy -p 80:8000 pdonorio/ipynb_data_slides
 
 # or Launch jupyter server in background (recommended)
@@ -22,6 +22,15 @@ Then go see [http://localhost](http://localhost)
 
 *user*: **pydatanalysis**
 *pw*: **workshop**
+
+*Warning*: if you are using '**boot2docker**' on mac/windows, the address may be different.
+E.g. on a mac you may run
+```
+boot2docker ip
+# 192.168.59.103
+```
+to check the ip to use instead of 'localhost'.
+
 
 ## Persistence of notebooks
 
@@ -49,4 +58,21 @@ docker rm ipy
 docker start ipy
 ```
 
+## See an example of slides made with ipython notebook
+
+Run the example inside this project
 ```
+git clone https://github.com/pdonorio/nbpydata-n-slides.git mynb
+cd mynb
+docker run -d --name ipy -p 80:8000 -v $(pwd)/slides:/home/pydatanalysis/sl pdonorio/ipynb_data_slides
+```
+
+At this point you may access the example at the web address
+
+[http://localhost/user/pydatanalysis/notebooks/sl/myslides.ipynb](http://localhost/user/pydatanalysis/notebooks/sl/myslides.ipynb)
+
+You should see something like this snapshot:
+
+![notebook with slides](https://www.dropbox.com/s/g4d3b7v9mok5mh8/Screenshot%202015-04-21%2012.34.04.png?dl=0 "test")
+
+Press the histogram button on the side of "Cell toolbar", and enjoy!
