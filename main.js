@@ -183,20 +183,11 @@ function Revealer() {
 
     keyboard: {
         13: null, // Enter disabled
-        //27: null, // ESC disabled
         27: function() {$('#help_b,#exit_b').fadeToggle();},
-        38: 'prev', // up arrow disabled
-        //38: null, // up arrow disabled
-        40: 'next', // down arrow disabled
-        //40: null, // down arrow disabled
+        38: 'prev', // up arrow
+        40: 'next', // down arrow
         66: null, // b, black pause disabled, use period or forward slash
-        72: null, // h, left disabled
-        74: null, // j, down disabled
-        75: null, // k, up disabled
-        76: null, // l, right disabled
-        78: null, // n, down disable
         79: null, // o disabled
-        80: null, // p, up disable
         // 83: null, // s, notes, but not working because notes is a plugin
         87: function() {Reveal.toggleOverview();}, // w, toggle overview
         //188: function() {$('#help_b,#exit_b').fadeToggle();},

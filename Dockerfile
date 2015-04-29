@@ -27,9 +27,10 @@ RUN mkdir -p $tmp && \
     echo "#!/bin/bash\ngit clone https://github.com/damianavila/RISE $tmp && cd $tmp && python setup.py install && rm -rf $tmp" > $liveslides \
     && chmod +x $liveslides && ipython profile create && $liveslides
 
+USER root
 # Change keys and profiles
-ADD main.js /home/$myser/.ipython/nbextensions/livereveal/main.js
+ADD main.js /home/$myuser/.ipython/nbextensions/livereveal/main.js
+RUN chown $myuser -R /home/$myuser/.ipython
 
 # CLEAN and use admin for launching jupyter
-USER root
 RUN rm -fr /tmp/*
