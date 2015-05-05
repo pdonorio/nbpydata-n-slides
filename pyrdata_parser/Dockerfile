@@ -40,6 +40,10 @@ RUN R --no-save < $rscript
 RUN echo "$rlibs install_github('IRkernel/IRdisplay'); install_github('IRkernel/IRkernel')" > $rscript
 RUN R --no-save < $rscript
 
+# Install data packages
+ADD data_analysis_packages.r /tmp/data_analysis_packages.r
+RUN R --no-save < /tmp/data_analysis_packages.r
+
 # Install kernel
 USER $myuser
 ENV rscript /tmp/Rscripting.Ruser

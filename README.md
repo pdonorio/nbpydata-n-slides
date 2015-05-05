@@ -1,4 +1,4 @@
-G# nbpydata-n-slides
+# nbpydata-n-slides
 
 This is a docker image:
 
