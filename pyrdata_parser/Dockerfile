@@ -51,3 +51,6 @@ RUN ipython kernelspec install --replace --name ir --user /usr/local/lib/R/site-
 RUN echo "library(IRdisplay); library(IRkernel); installspec()" > $rscript && R --no-save < $rscript
 
 USER root
+
+# Python yaml libraries
+RUN apt-get install -y python3-yaml
